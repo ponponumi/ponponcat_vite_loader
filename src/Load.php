@@ -85,4 +85,11 @@ class Load
             }
         }
     }
+
+    private function jsLoadDev(array $files)
+    {
+        $this->loadRoopCallback($files, function ($file) {
+            echo $this->viteLoader->jsLinkCreate($file);
+        });
+    }
 }
