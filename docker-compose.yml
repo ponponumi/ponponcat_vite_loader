@@ -75,6 +75,7 @@ services:
             - ./test:/var/www/html/
             - ./vendor:/var/www/html/vendor
             - ./src:/var/www/html/src
+            - ./test_theme/build:/var/www/html/build
         networks:
             - wordpress
 
