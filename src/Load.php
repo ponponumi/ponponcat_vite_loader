@@ -92,4 +92,12 @@ class Load
             echo $this->viteLoader->jsLinkCreate($file);
         });
     }
+
+    private function moduleLoadDev(array $files)
+    {
+
+        $this->loadRoopCallback($files, function ($file) {
+            echo $this->viteLoader->moduleLinkCreate($file);
+        });
+    }
 }
