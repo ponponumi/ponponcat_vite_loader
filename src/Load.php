@@ -132,4 +132,11 @@ class Load
             wp_enqueue_script($this->idCreate($file), $file,[],false,true);
         });
     }
+
+    private function moduleLoad(array $files)
+    {
+        $this->loadRoopCallback($files, function ($file) {
+            wp_enqueue_script_module($this->idCreate($file), $file);
+        });
+    }
 }
