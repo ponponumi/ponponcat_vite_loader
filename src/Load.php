@@ -199,6 +199,8 @@ class Load
 
     public function __destruct()
     {
-        $this->load();
+        if($this->destructMode){
+            $this->load();
+        }
     }
 }
