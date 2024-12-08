@@ -11,10 +11,16 @@ class Load
     public object $viteLoader;
     public $devMode = false;
     public string $idStart = "ponponcat";
+    public $destructMode = false;
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
         $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath, $errorMode);
+    }
+
+    public function destructModeSet($value)
+    {
+        $this->destructMode = $value;
     }
 
     public function idStartSet(string $idStart="")
