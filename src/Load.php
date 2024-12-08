@@ -169,6 +169,14 @@ class Load
                     $this->jsLoadDev($this->jsFiles);
                 });
             }
+
+            if($this->loadCheck($this->jsFooterFiles,$this->jsModuleFiles)){
+                // bodyの最後にJSを読み込み
+                add_action("wp_footer", function () {
+                    $this->jsLoadDev($this->jsFooterFiles);
+                    $this->moduleLoadDev($this->jsModuleFiles);
+                });
+            }
         }else{
             // 製品モードであれば
         }
