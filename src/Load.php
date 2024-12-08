@@ -76,4 +76,13 @@ class Load
         // IDを作る
         return "ponponcat_" . pathinfo($path, PATHINFO_FILENAME);
     }
+
+    private function loadRoopCallback(array $files,callable $func)
+    {
+        if($files !== []){
+            foreach($files as $file){
+                $func($file);
+            }
+        }
+    }
 }
