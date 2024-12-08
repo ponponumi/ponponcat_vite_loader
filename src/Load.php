@@ -15,6 +15,7 @@ class Load
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
+        $this->wordpressCheck();
         $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath, $errorMode);
     }
 
