@@ -28,4 +28,35 @@ class Load
             $this->devMode = false;
         }
     }
+
+    private function fileSet(array $file, string $scriptMode, string $reloadPath)
+    {
+        // ファイルをプロパティにセットする
+        if($file["type"] === "style"){
+            // CSSなら、無条件でCSSファイルとしてセットする
+            $this->cssFiles[] = $file["path"];
+        }elseif($file["type"] === "script"){
+            // JavaScriptなら
+            if($file["path"] === $reloadPath){
+                // リロード用スクリプトなら、モジュールに組み込む
+                $this->jsModuleFiles[] = $file["path"];
+            }else{
+                // リロード用以外なら、状況によって分ける
+                switch($scriptMode){
+                    case "head":
+                        // 通常のスクリプトで、headに読み込ませるなら
+                        $this->jsFiles[] = $file["path"];
+                        break;
+                    case "footer":
+                        // 通常のスクリプトで、フッターに読み込ませるなら
+                        $this->jsFooterFiles[] = $file["path"];
+                        break;
+                    default:
+                        // モジュールにするなら
+                        $this->jsModuleFiles[] = $file["path"];
+                        break;
+                }
+            }
+        }
+    }
 }
