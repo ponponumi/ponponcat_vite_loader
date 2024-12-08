@@ -23,6 +23,19 @@ class Load
         $this->destructMode = $value;
     }
 
+    public function wordpressCheck()
+    {
+        // WordPressの関数があるかどうかどうか確認
+        $addAction = function_exists("add_action");
+        $wpEnqueueStyle = function_exists("wp_enqueue_style");
+        $wpEnqueueScript = function_exists("wp_enqueue_script");
+        $wpEnqueueScriptModule = function_exists("wp_enqueue_script_module");
+
+        if(!$addAction || $wpEnqueueStyle || $wpEnqueueScript || $wpEnqueueScriptModule){
+            throw new \Exception("この環境では、本ライブラリを使用できません");
+        }
+    }
+
     public function idStartSet(string $idStart="")
     {
         if($idStart !== ""){
