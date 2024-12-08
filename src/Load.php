@@ -10,4 +10,9 @@ class Load
     public array $jsFooterFiles = [];
     public object $viteLoader;
     public $devMode = false;
+
+    public function __construct(string $manifestPath,string $buildPath)
+    {
+        $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath);
+    }
 }
