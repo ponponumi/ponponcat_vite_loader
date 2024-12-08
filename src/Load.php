@@ -139,4 +139,12 @@ class Load
             wp_enqueue_script_module($this->idCreate($file), $file);
         });
     }
+
+    private function cssLoad(array $files)
+    {
+
+        $this->loadRoopCallback($files, function ($file) {
+            wp_enqueue_style($this->idCreate($file), $file);
+        });
+    }
 }
