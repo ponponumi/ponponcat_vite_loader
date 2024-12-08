@@ -11,8 +11,8 @@ class Load
     public object $viteLoader;
     public $devMode = false;
 
-    public function __construct(string $manifestPath,string $buildPath)
+    public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
-        $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath);
+        $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath, $errorMode);
     }
 }
