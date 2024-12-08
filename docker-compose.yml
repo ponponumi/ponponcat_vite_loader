@@ -63,6 +63,21 @@ services:
         networks:
             - wordpress
 
+    php:
+        image: php:8.3-apache
+        ports:
+            - "${WP_PORT:-5104}:80"
+        environment:
+            WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-0}
+            PONPONCAT_VITE_HOST: "${VITE_HOST:-http://vite}:${VITE_PORT:-5103}"
+            PONPONCAT_VITE_HOST_WEB: "${VITE_HOST_WEB:-http://localhost}:${VITE_PORT:-5103}"
+        volumes:
+            - ./test:/var/www/html/
+            - ./vendor:/var/www/html/vendor
+            - ./src:/var/www/html/src
+        networks:
+            - wordpress
+
 networks:
     wordpress:
         driver: bridge
