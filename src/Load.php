@@ -32,7 +32,7 @@ class Load
         $wpEnqueueScript = function_exists("wp_enqueue_script");
         $wpEnqueueScriptModule = function_exists("wp_enqueue_script_module");
 
-        if(!$addAction || $wpEnqueueStyle || $wpEnqueueScript || $wpEnqueueScriptModule){
+        if(!$addAction || !$wpEnqueueStyle || !$wpEnqueueScript || !$wpEnqueueScriptModule){
             throw new \Exception("この環境では、本ライブラリを使用できません");
         }
     }
