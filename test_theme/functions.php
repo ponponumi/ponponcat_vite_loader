@@ -7,6 +7,10 @@ require_once __DIR__ . "/vendor/autoload.php";
 
     $viteLoader->destructModeSet(true);
 
+    if(WP_DEBUG){
+        $viteLoader->devSet(true, $_ENV["PONPONCAT_VITE_HOST"], $_ENV["PONPONCAT_VITE_HOST_WEB"]);
+    }
+
     $viteLoader->filesSet([
         "assets/scss/style.scss",
         "assets/ts/script.ts",
