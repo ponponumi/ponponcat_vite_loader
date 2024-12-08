@@ -23,6 +23,4 @@ require_once __DIR__ . "/vendor/autoload.php";
     $viteLoader->filesSet([
         "assets/ts/footer.ts",
     ],"footer");
-
-    var_dump($viteLoader);
 })();
