@@ -125,4 +125,11 @@ class Load
             wp_enqueue_script($this->idCreate($file), $file);
         });
     }
+
+    private function jsFooterLoad(array $files)
+    {
+        $this->loadRoopCallback($files, function ($file) {
+            wp_enqueue_script($this->idCreate($file), $file,[],false,true);
+        });
+    }
 }
