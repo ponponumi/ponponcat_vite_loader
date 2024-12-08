@@ -10,6 +10,7 @@ class Load
     public array $jsFooterFiles = [];
     public object $viteLoader;
     public $devMode = false;
+    public string $idStart = "ponponcat";
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
