@@ -195,16 +195,6 @@ class Load
                 });
             }
         }
-
-        $this->allFilesReset();
-    }
-
-    public function allFilesReset()
-    {
-        $this->cssFiles = [];
-        $this->jsFiles = [];
-        $this->jsFooterFiles = [];
-        $this->jsModuleFiles = [];
     }
 
     public function __destruct()
