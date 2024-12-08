@@ -195,6 +195,8 @@ class Load
                 });
             }
         }
+
+        $this->allFilesReset();
     }
 
     public function allFilesReset()
