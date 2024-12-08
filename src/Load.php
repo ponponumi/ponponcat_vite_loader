@@ -179,6 +179,15 @@ class Load
             }
         }else{
             // 製品モードであれば
+            if($this->loadCheck($this->cssFiles,$this->jsFiles,$this->jsFooterFiles,$this->jsModuleFiles)){
+                // 全てのファイルを読み込み
+                add_action("wp_enqueue_scripts", function () {
+                    $this->cssLoad($this->cssFiles);
+                    $this->jsLoad($this->jsFiles);
+                    $this->jsFooterLoad($this->jsFooterFiles);
+                    $this->moduleLoad($this->jsModuleFiles);
+                });
+            }
         }
     }
 }
