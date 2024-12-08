@@ -14,7 +14,10 @@ export default defineConfig({
         outDir: './test_theme/build',
         rollupOptions: {
             input: [
-                "assets/ts/script.ts"
+                "assets/scss/style.scss",
+                "assets/ts/script.ts",
+                "assets/ts/head.ts",
+                "assets/ts/footer.ts",
             ],
         },
     },
