@@ -4,3 +4,4 @@ node_modules/
 vendor/
 .env
 test_theme/build/
+test/build/
