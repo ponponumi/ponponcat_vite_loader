@@ -34,14 +34,8 @@ class Load
         $getLocale = function_exists("get_locale");
 
         if(!$addAction || !$wpEnqueueStyle || !$wpEnqueueScript || !$wpEnqueueScriptModule || !$getLocale){
-            $message = "This library cannot be used in environments other than WordPress.";
-            $lang = get_locale();
-
-            switch($lang){
-                case "ja":
-                    $message = "WordPress以外の環境では、本ライブラリを使用できません。";
-                    break;
-            }
+            $message = "WordPress以外の環境では、本ライブラリを使用できません。";
+            $message .= "\nThis library cannot be used in environments other than WordPress.";
 
             throw new \Exception($message);
         }
