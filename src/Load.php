@@ -17,6 +17,15 @@ class Load
         $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath, $errorMode);
     }
 
+    public function idStartSet(string $idStart="")
+    {
+        if($idStart !== ""){
+            $this->idStart = $idStart;
+        }else{
+            $this->idStart = "ponponcat";
+        }
+    }
+
     public function devSet($devMode=false,string $devHost="",string $devHostWeb=""){
         // デバッグモードを設定する
         if($devMode){
