@@ -31,9 +31,19 @@ class Load
         $wpEnqueueStyle = function_exists("wp_enqueue_style");
         $wpEnqueueScript = function_exists("wp_enqueue_script");
         $wpEnqueueScriptModule = function_exists("wp_enqueue_script_module");
+        $getLocale = function_exists("get_locale");
 
-        if(!$addAction || !$wpEnqueueStyle || !$wpEnqueueScript || !$wpEnqueueScriptModule){
-            throw new \Exception("WordPress以外の環境では、本ライブラリを使用できません");
+        if(!$addAction || !$wpEnqueueStyle || !$wpEnqueueScript || !$wpEnqueueScriptModule || !$getLocale){
+            $message = "This library cannot be used in environments other than WordPress.";
+            $lang = get_locale();
+
+            switch($lang){
+                case "ja":
+                    $message = "WordPress以外の環境では、本ライブラリを使用できません。";
+                    break;
+            }
+
+            throw new \Exception($message);
         }
     }
 
