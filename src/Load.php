@@ -118,4 +118,11 @@ class Load
             echo $this->viteLoader->cssLinkCreate($file);
         });
     }
+
+    private function jsLoad(array $files)
+    {
+        $this->loadRoopCallback($files, function ($file) {
+            wp_enqueue_script($this->idCreate($file), $file);
+        });
+    }
 }
