@@ -100,4 +100,12 @@ class Load
             echo $this->viteLoader->moduleLinkCreate($file);
         });
     }
+
+    private function cssLoadDev(array $files)
+    {
+
+        $this->loadRoopCallback($files, function ($file) {
+            echo $this->viteLoader->cssLinkCreate($file);
+        });
+    }
 }
