@@ -59,4 +59,15 @@ class Load
             }
         }
     }
+
+    public function filesSet(array $files,string $scriptMode="module")
+    {
+        // ファイルをセットする
+        $reloadPath = $this->viteLoader->viteReloadPathGet(false);
+        $webFiles = $this->viteLoader->typeWebPathListGet($files);
+
+        foreach($webFiles as $webFile){
+            $this->fileSet($webFile, $scriptMode, $reloadPath);
+        }
+    }
 }
