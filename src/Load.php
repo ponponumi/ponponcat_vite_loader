@@ -147,4 +147,14 @@ class Load
             wp_enqueue_style($this->idCreate($file), $file);
         });
     }
+
+    private function loadCheck(array $files1,array $files2,array $files3=[],array $files4=[]): bool
+    {
+        if($files1 !== [] || $files2 !== [] || $files3 !== [] || $files4 !== []){
+            // どれか1つでもデータがあればtrueにする
+            return true;
+        }
+
+        return false;
+    }
 }
