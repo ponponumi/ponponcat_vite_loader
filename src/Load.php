@@ -157,4 +157,20 @@ class Load
 
         return false;
     }
+
+    public function load()
+    {
+        if($this->devMode){
+            // 開発モードであれば
+            if($this->loadCheck($this->cssFiles,$this->jsFiles)){
+                // headにCSSとJSを読み込み
+                add_action("wp_head", function () {
+                    $this->cssLoadDev($this->cssFiles);
+                    $this->jsLoadDev($this->jsFiles);
+                });
+            }
+        }else{
+            // 製品モードであれば
+        }
+    }
 }
