@@ -70,4 +70,10 @@ class Load
             $this->fileSet($webFile, $scriptMode, $reloadPath);
         }
     }
+
+    private function idCreate(string $path)
+    {
+        // IDを作る
+        return "ponponcat_" . pathinfo($path, PATHINFO_FILENAME);
+    }
 }
