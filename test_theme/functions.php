@@ -22,6 +22,4 @@ require_once __DIR__ . "/vendor/autoload.php";
         "assets/ts/footer.ts",
         "assets/ts/fooe.ts",
     ],"footer");
-
-    $viteLoader->load();
 })();
