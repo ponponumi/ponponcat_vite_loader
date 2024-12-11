@@ -14,7 +14,7 @@ require_once __DIR__ . "/vendor/autoload.php";
         "assets/ts/script.ts",
     ]);
 
-    $viteLoader->filesSet([
+    $viteLoader->filesSetLoad([
         "assets/ts/head.ts",
     ],"head");
 
