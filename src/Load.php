@@ -12,6 +12,7 @@ class Load
     public $devMode = false;
     public string $idStart = "ponponcat";
     public $destructMode = false;
+    private bool $loaded = false;
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
