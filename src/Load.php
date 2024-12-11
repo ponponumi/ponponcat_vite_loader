@@ -105,6 +105,12 @@ class Load
         }
     }
 
+    public function filesSetLoad(array $files,string $scriptMode="module")
+    {
+        $this->filesSet($files, $scriptMode);
+        $this->load();
+    }
+
     private function idCreate(string $path)
     {
         // IDを作る
