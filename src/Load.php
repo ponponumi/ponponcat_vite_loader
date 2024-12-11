@@ -191,6 +191,11 @@ class Load
 
     public function load()
     {
+        if($this->loaded){
+            // 既に読み込み済みであれば
+            throw new \Exception("既に読み込み済みです");
+        }
+
         if($this->devMode){
             // 開発モードであれば
             if($this->loadCheck($this->cssFiles,$this->jsFiles)){
