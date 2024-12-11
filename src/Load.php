@@ -12,6 +12,7 @@ class Load
     public $devMode = false;
     public string $idStart = "ponponcat";
     public $destructMode = false;
+    private bool $loaded = false;
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
@@ -105,6 +106,12 @@ class Load
         }
     }
 
+    public function filesSetLoad(array $files,string $scriptMode="module")
+    {
+        $this->filesSet($files, $scriptMode);
+        $this->load();
+    }
+
     private function idCreate(string $path)
     {
         // IDを作る
@@ -184,6 +191,11 @@ class Load
 
     public function load()
     {
+        if($this->loaded){
+            // 既に読み込み済みであれば
+            throw new \Exception("既に読み込み済みです");
+        }
+
         if($this->devMode){
             // 開発モードであれば
             if($this->loadCheck($this->cssFiles,$this->jsFiles)){
@@ -213,6 +225,8 @@ class Load
                 });
             }
         }
+
+        $this->loaded = true;
     }
 
     public function __destruct()

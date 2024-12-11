@@ -18,10 +18,8 @@ require_once __DIR__ . "/vendor/autoload.php";
         "assets/ts/head.ts",
     ],"head");
 
-    $viteLoader->filesSet([
+    $viteLoader->filesSetLoad([
         "assets/ts/footer.ts",
         "assets/ts/fooe.ts",
     ],"footer");
-
-    $viteLoader->load();
 })();
