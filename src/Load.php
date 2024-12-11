@@ -225,6 +225,8 @@ class Load
                 });
             }
         }
+
+        $this->loaded = true;
     }
 
     public function __destruct()
