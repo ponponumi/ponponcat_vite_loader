@@ -107,9 +107,14 @@ class Load
     {
         // ファイルをセットする
         $reloadPath = $this->viteLoader->viteReloadPathGet(false);
-        $webFiles = $this->viteLoader->typeWebPathListGet($files);
 
-        foreach($webFiles as $webFile){
+        if($reloadPath !== ""){
+            $reload = $this->viteLoader->typeViteReloadPathGet();
+            $this->fileSet($reload, $scriptMode, $reloadPath);
+        }
+
+        foreach($files as $file){
+            $webFile = $this->viteLoader->typeWebPathGet($file);
             $this->fileSet($webFile, $scriptMode, $reloadPath);
         }
     }
