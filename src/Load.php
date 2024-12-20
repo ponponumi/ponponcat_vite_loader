@@ -14,6 +14,7 @@ class Load
     public $destructMode = false;
     private bool $loaded = false;
     private array $sourceList = [];
+    private bool $sourceMode = false;
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
