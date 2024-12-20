@@ -22,6 +22,12 @@ class Load
         $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath, $errorMode);
     }
 
+    public function idNameSourceModeSet(bool $value=true)
+    {
+        // ID名をソースファイルの形式にするかどうか設定
+        $this->sourceMode = $value;
+    }
+
     public function destructModeSet($value)
     {
         $this->destructMode = $value;
