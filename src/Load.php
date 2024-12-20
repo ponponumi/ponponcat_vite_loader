@@ -118,7 +118,7 @@ class Load
             $this->fileSet($webFile, $scriptMode, $reloadPath);
 
             // ID用にWeb用のパスと、ソースのパスを追加
-            $this->sourceList[$webFile] = $file;
+            $this->sourceList[$webFile["path"]] = $file;
         }
     }
 
