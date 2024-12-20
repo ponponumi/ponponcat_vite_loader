@@ -131,6 +131,14 @@ class Load
     private function idCreate(string $path)
     {
         // IDを作る
+        if($this->sourceMode){
+            // ソースファイルパスを基準にするなら
+            $path = preg_replace('/[^a-zA-Z0-9\-_]/', '-', $this->sourceList[$path]);
+        }else{
+            // ビルド済みファイル名を基準にするなら
+            $path = pathinfo($path, PATHINFO_FILENAME);
+        }
+
         return $this->idStart . "_" . pathinfo($path, PATHINFO_FILENAME);
     }
 
