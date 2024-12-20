@@ -116,6 +116,9 @@ class Load
         foreach($files as $file){
             $webFile = $this->viteLoader->typeWebPathGet($file);
             $this->fileSet($webFile, $scriptMode, $reloadPath);
+
+            // ID用にWeb用のパスと、ソースのパスを追加
+            $this->sourceList[$file] = $webFile;
         }
     }
 
