@@ -13,6 +13,7 @@ class Load
     public string $idStart = "ponponcat";
     public $destructMode = false;
     private bool $loaded = false;
+    private array $sourceList = [];
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
