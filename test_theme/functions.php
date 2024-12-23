@@ -9,6 +9,8 @@ require_once __DIR__ . "/vendor/autoload.php";
     //     $viteLoader->devSet(true, $_ENV["PONPONCAT_VITE_HOST"], $_ENV["PONPONCAT_VITE_HOST_WEB"]);
     // }
 
+    $viteLoader->idSourcePathModeChange(true);
+
     $viteLoader->filesSet([
         "assets/scss/style.scss",
         "assets/ts/script.ts",
