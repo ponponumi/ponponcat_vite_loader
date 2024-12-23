@@ -120,7 +120,14 @@ class Load
     private function idCreate(string $path)
     {
         // IDを作る
-        return $this->idStart . "_" . pathinfo($path, PATHINFO_FILENAME);
+        if($this->idSourcePathMode){
+            // ソースパスベースなら
+            $sourcePath = $this->viteLoader->sourcePathGet($path);
+            return $this->idStart . "_" . preg_replace("/[^a-zA-Z0-9_-]/","-",$sourcePath);
+        }else{
+            // ファイル名ベースなら
+            return $this->idStart . "_" . pathinfo($path, PATHINFO_FILENAME);
+        }
     }
 
     private function loadRoopCallback(array $files,callable $func)
