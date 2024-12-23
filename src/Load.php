@@ -21,6 +21,10 @@ class Load
         $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath, $errorMode);
     }
 
+    public function idSourcePathModeChange($value){
+        $this->idSourcePathMode = boolval($value);
+    }
+
     public function destructModeSet($value)
     {
         $this->destructMode = $value;
