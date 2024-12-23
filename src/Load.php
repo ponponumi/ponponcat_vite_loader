@@ -13,11 +13,16 @@ class Load
     public string $idStart = "ponponcat";
     public $destructMode = false;
     private bool $loaded = false;
+    private bool $idSourcePathMode = false;
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
         $this->wordpressCheck();
         $this->viteLoader = new \Ponponumi\ViteLoader\ViteLoader($manifestPath, $buildPath, $errorMode);
+    }
+
+    public function idSourcePathModeChange($value){
+        $this->idSourcePathMode = boolval($value);
     }
 
     public function destructModeSet($value)
@@ -115,7 +120,14 @@ class Load
     private function idCreate(string $path)
     {
         // IDを作る
-        return $this->idStart . "_" . pathinfo($path, PATHINFO_FILENAME);
+        if($this->idSourcePathMode){
+            // ソースパスベースなら
+            $sourcePath = $this->viteLoader->sourcePathGet($path);
+            return $this->idStart . "_" . preg_replace("/[^a-zA-Z0-9_-]/","-",$sourcePath);
+        }else{
+            // ファイル名ベースなら
+            return $this->idStart . "_" . pathinfo($path, PATHINFO_FILENAME);
+        }
     }
 
     private function loadRoopCallback(array $files,callable $func)
