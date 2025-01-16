@@ -31,6 +31,11 @@ class Load
         $this->destructMode = $value;
     }
 
+    public function blockEditorLoadMode(bool $set): void
+    {
+        $this->blockEditorLoad = $set;
+    }
+
     public function wordpressCheck()
     {
         // WordPressの関数があるかどうかどうか確認
