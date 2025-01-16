@@ -252,7 +252,7 @@ class Load
             if($this->cssFilesBlockEditor !== []){
                 add_action("enqueue_block_editor_assets", function(){
                     foreach($this->cssFilesBlockEditor as $cssFile){
-                        wp_enqueue_script("block_editor" . $this->idCreate($cssFile), $cssFile);
+                        wp_enqueue_style("block_editor" . $this->idCreate($cssFile), $cssFile);
                     }
                 });
             }
