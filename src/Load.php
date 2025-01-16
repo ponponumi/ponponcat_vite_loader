@@ -14,6 +14,7 @@ class Load
     public $destructMode = false;
     private bool $loaded = false;
     private bool $idSourcePathMode = false;
+    private bool $blockEditorLoad = false;
 
     public function __construct(string $manifestPath,string $buildPath,$errorMode=false)
     {
