@@ -5,6 +5,7 @@ namespace Ponponumi\PonponcatViteLoader;
 class Load
 {
     public array $cssFiles = [];
+    public array $cssFilesBlockEditor = [];
     public array $jsModuleFiles = [];
     public array $jsFiles = [];
     public array $jsFooterFiles = [];
