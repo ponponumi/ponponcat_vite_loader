@@ -2,7 +2,7 @@
     "name": "ponponumi/ponponcat_vite_loader",
     "type": "library",
     "require": {
-        "ponponumi/vite-loader": ">=1.0.8"
+        "ponponumi/vite-loader": ">=1.1.0"
     },
     "license": "GPL-2.0-or-later",
     "autoload": {
