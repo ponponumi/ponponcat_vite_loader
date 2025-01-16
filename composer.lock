@@ -333,16 +333,16 @@
         },
         {
             "name": "ponponumi/vite-loader",
-            "version": "1.0.9",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ponponumi/vite-loader.git",
-                "reference": "276e629e096caf0b32c53700a011e081729b715e"
+                "reference": "b3f8d275909d9b60c186cdfa4f2195c7be55671a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ponponumi/vite-loader/zipball/276e629e096caf0b32c53700a011e081729b715e",
-                "reference": "276e629e096caf0b32c53700a011e081729b715e",
+                "url": "https://api.github.com/repos/ponponumi/vite-loader/zipball/b3f8d275909d9b60c186cdfa4f2195c7be55671a",
+                "reference": "b3f8d275909d9b60c186cdfa4f2195c7be55671a",
                 "shasum": ""
             },
             "require": {
@@ -366,9 +366,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ponponumi/vite-loader/issues",
-                "source": "https://github.com/ponponumi/vite-loader/tree/1.0.9"
+                "source": "https://github.com/ponponumi/vite-loader/tree/1.1.0"
             },
-            "time": "2024-12-23T16:09:28+00:00"
+            "time": "2025-01-16T06:27:52+00:00"
         },
         {
             "name": "psr/http-client",
