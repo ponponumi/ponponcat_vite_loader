@@ -11,6 +11,8 @@ require_once __DIR__ . "/vendor/autoload.php";
 
     $viteLoader->idSourcePathModeChange(true);
 
+    $viteLoader->blockEditorLoadMode(true);
+
     $viteLoader->filesSet([
         "assets/scss/style.scss",
         "assets/ts/script.ts",
