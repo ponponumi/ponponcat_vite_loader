@@ -82,6 +82,11 @@ class Load
         if($file["type"] === "style"){
             // CSSなら、無条件でCSSファイルとしてセットする
             $this->cssFiles[] = $file["path"];
+
+            if($this->blockEditorLoad){
+                // ブロックエディタで読み込むなら
+                $this->cssFilesBlockEditor[] = $file["path"];
+            }
         }elseif($file["type"] === "script"){
             // JavaScriptなら
             if($file["path"] === $reloadPath){
